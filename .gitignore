@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,commonlisp,janet,perl6,rust,vim
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,commonlisp,janet,perl6,rust,vim
+# Created by https://www.toptal.com/developers/gitignore/api/macos,commonlisp,janet,perl6,rust,vim,zig
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,commonlisp,janet,perl6,rust,vim,zig
 
 ### CommonLisp ###
 *.FASL
@@ -104,4 +104,12 @@ tags
 # Persistent undo
 [._]*.un~
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,commonlisp,janet,perl6,rust,vim
+### zig ###
+# Zig programming language
+
+.zig-cache/
+zig-out/
+build-*/
+docgen_tmp/
+
+# End of https://www.toptal.com/developers/gitignore/api/macos,commonlisp,janet,perl6,rust,vim,zig
