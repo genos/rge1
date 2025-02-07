@@ -31,7 +31,7 @@ fn main() {
                 let (mut x, mut t) = (0.0, 0.0);
                 while t < 1.0 {
                     x += 1.0;
-                    t += rng.gen::<f64>();
+                    t += rng.random::<f64>();
                 }
                 let n = n_old + 1.0;
                 let mu = mu_old + (x - mu_old) / n;
