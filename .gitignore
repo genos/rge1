@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,commonlisp,janet,perl6,rust,vim,zig
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,commonlisp,janet,perl6,rust,vim,zig
+# Created by https://www.toptal.com/developers/gitignore/api/macos,commonlisp,haskell,janet,perl6,rust,scheme,vim,zig
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,commonlisp,haskell,janet,perl6,rust,scheme,vim,zig
 
 ### CommonLisp ###
 *.FASL
@@ -19,6 +19,31 @@
 *.sx32fsl
 *.wx64fsl
 *.wx32fsl
+
+### Haskell ###
+dist
+dist-*
+cabal-dev
+*.o
+*.hi
+*.hie
+*.chi
+*.chs.h
+*.dyn_o
+*.dyn_hi
+.hpc
+.hsenv
+.cabal-sandbox/
+cabal.sandbox.config
+*.prof
+*.aux
+*.hp
+*.eventlog
+.stack-work/
+cabal.project.local
+cabal.project.local~
+.HTF/
+.ghc.environment.*
 
 ### Janet ###
 # Compiled binaries
@@ -83,6 +108,15 @@ Cargo.lock
 # MSVC Windows builds of rustc generate these, which store debugging information
 *.pdb
 
+### Scheme ###
+*.ss~
+*.ss#*
+.#*.ss
+
+*.scm~
+*.scm#*
+.#*.scm
+
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
@@ -112,4 +146,4 @@ zig-out/
 build-*/
 docgen_tmp/
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,commonlisp,janet,perl6,rust,vim,zig
+# End of https://www.toptal.com/developers/gitignore/api/macos,commonlisp,haskell,janet,perl6,rust,scheme,vim,zig
