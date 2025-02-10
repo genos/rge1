@@ -1,0 +1,12 @@
+[project]
+authors = ["Graham Enos <graham@strangeworks.com>"]
+channels = ["conda-forge", "https://conda.modular.com/max", "https://repo.prefix.dev/modular-community"]
+description = "Random ≥ 1, in Mojo"
+name = "rge1"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+max = ">=24.6.0,<25"
