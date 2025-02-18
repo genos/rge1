@@ -9,9 +9,8 @@ let go _ =
   !i
 
 let () =
-  let num_domains = try int_of_string Sys.argv.(1) with _ -> 16 in
-  let n = try int_of_string Sys.argv.(2) with _ -> 1_000_000 in
-  let pool = T.setup_pool ~num_domains:(num_domains - 1) () in
+  let n = 1_000_000 in
+  let pool = T.setup_pool ~num_domains:15 () in
   let x =
     T.run pool (fun _ ->
         T.parallel_for_reduce ~start:1 ~finish:n ~body:(Fun.const go ()) pool
