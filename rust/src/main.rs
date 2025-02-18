@@ -26,16 +26,14 @@ fn main() {
         .fold_chunks(
             args.chunk_size,
             || (0.0, 0.0),
-            |(n_old, mu_old), seed| {
+            |(n, mu), seed| {
                 let mut rng = SmallRng::seed_from_u64(seed);
                 let (mut x, mut t) = (0.0, 0.0);
                 while t < 1.0 {
                     x += 1.0;
                     t += rng.random::<f64>();
                 }
-                let n = n_old + 1.0;
-                let mu = mu_old + (x - mu_old) / n;
-                (n, mu)
+                (n + 1.0, mu + (x - mu) / (n + 1.0))
             },
         )
         .reduce(
