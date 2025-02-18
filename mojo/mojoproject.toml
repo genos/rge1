@@ -1,5 +1,5 @@
 [project]
-authors = ["Graham Enos <graham@strangeworks.com>"]
+authors = ["Graham Enos <graham.enos@gmail.com>"]
 channels = ["conda-forge", "https://conda.modular.com/max", "https://repo.prefix.dev/modular-community"]
 description = "Random ≥ 1, in Mojo"
 name = "rge1"

@@ -3,7 +3,7 @@ name: rge1
 version: 0.1.0.0
 license: MIT
 author: Graham Enos
-maintainer: graham@strangeworks.com
+synopsis: Random ≥ 1 in Haskell
 category: Math
 build-type: Simple
 
@@ -11,7 +11,6 @@ common warnings
   ghc-options:
     -Wall
     -Wextra
-    -O2
 
 executable rge1
   import: warnings
