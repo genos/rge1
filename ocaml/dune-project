@@ -1,0 +1,10 @@
+(lang dune 3.17)
+
+(name rge1)
+
+(package
+ (name rge1)
+ (synopsis "Random ≥ 1, in OCaml")
+ (depends
+   (ocaml (and (>= 5.2.0) (< 6)))
+   (domainslib (>= 0.5.1))))
