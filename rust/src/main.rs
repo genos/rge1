@@ -2,7 +2,7 @@ use clap::Parser;
 use rand::{rngs::SmallRng, Rng, SeedableRng};
 use rayon::prelude::*;
 
-/// Random ≥ 1 in Rust
+/// Random ≥ 1 in Rust.
 #[derive(Debug, Parser)]
 #[command(version, about, long_about = None)]
 struct Args {
