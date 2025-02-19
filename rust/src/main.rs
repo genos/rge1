@@ -38,11 +38,7 @@ fn main() {
         )
         .reduce(
             || (0.0, 0.0),
-            |(n_a, mu_a), (n_b, mu_b)| {
-                let n = n_a + n_b;
-                let mu = mu_a + (mu_b - mu_a) * n_b / n;
-                (n, mu)
-            },
+            |(n_a, mu_a), (n_b, mu_b)| (n_a + n_b, mu_a + (mu_b - mu_a) * n_b / (n_a + n_b)),
         )
         .1;
     println!("{x}");
