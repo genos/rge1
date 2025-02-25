@@ -19,7 +19,7 @@
         src = ./.;
         buildInputs = [ pkgs.clang_19 ];
         buildPhase = "clang -Wall -Wextra -O3 -ffast-math -std=c2x ${name}.c -o ${name}";
-        installPhase = "mkdir -p $out; cp ${name} $out";
+        installPhase = "mkdir -p $out/bin; cp ${name} $out/bin";
       };
     });
 }

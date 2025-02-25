@@ -25,7 +25,7 @@
           mkdir -p $JANET_BUILDPATH
           jpm build --optimize=3
         '';
-        installPhase = "mkdir -p $out; cp $JANET_BUILDPATH/${name} $out";
+        installPhase = "mkdir -p $out/bin; cp $JANET_BUILDPATH/${name} $out/bin";
       };
     });
 }
