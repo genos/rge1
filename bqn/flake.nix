@@ -1,5 +1,5 @@
 {
-  description = "rge1 in BQN";
+  description = "Random ≥ 1 in BQN";
 
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
@@ -14,9 +14,9 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import nixpkgs {inherit system;};
     in {
-      packages.default = pkgs.writeShellApplication {
+      packages.default = pkgs.writeShellApplication rec {
         name = "rge1";
-        text = "${pkgs.cbqn}/bin/bqn ./rge1.bqn";
+        text = "${pkgs.cbqn}/bin/bqn ${name}.bqn";
       };
     });
 }

@@ -1,5 +1,5 @@
 {
-  description = "Random ≥ 1 in Raku";
+  description = "Random ≥ 1 in C";
 
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
@@ -14,9 +14,12 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import nixpkgs {inherit system;};
     in {
-      packages.default = pkgs.writeShellApplication rec {
+      packages.default = pkgs.stdenv.mkDerivation rec {
         name = "rge1";
-        text = "${pkgs.rakudo}/bin/raku ${name}.raku";
+        src = ./.;
+        buildInputs = [ pkgs.clang_19 ];
+        buildPhase = "clang -Wall -Wextra -O3 -ffast-math -std=c2x ${name}.c -o ${name}";
+        installPhase = "mkdir -p $out; cp ${name} $out";
       };
     });
 }

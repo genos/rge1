@@ -1,5 +1,5 @@
 {
-  description = "Random ≥ 1 in Raku";
+  description = "Random ≥ 1 in Chez Scheme";
 
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
@@ -16,7 +16,7 @@
     in {
       packages.default = pkgs.writeShellApplication rec {
         name = "rge1";
-        text = "${pkgs.rakudo}/bin/raku ${name}.raku";
+        text = "${pkgs.chez}/bin/scheme --script ${name}.scm";
       };
     });
 }
