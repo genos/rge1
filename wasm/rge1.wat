@@ -55,7 +55,7 @@
       (i32.rem_u (local.get $random) (local.get $bound)))
 
      ;; ((randomInt32() & 0x1f_ffff) * 0x1_0000_0000 + randomInt32()) * 1.1102230246251565e-16;
-    (func $random (export "random") (result f64)
+    (func $random (result f64)
       (f64.mul
         (f64.convert_i64_u
           (i64.add
@@ -66,6 +66,7 @@
         (f64.const 1.1102230246251565e-16)))
 
   ;; rge1
+
   (func $single (result f64)
     (local $i f64)
     (local $t f64)
@@ -78,7 +79,7 @@
         (br $loop)))
     (local.get $i))
 
-  (func $many (export "many") (result f64)
+  (func $rge1 (export "rge1") (result f64)
     (local $i f64)
     (local $x f64)
     (loop $loop

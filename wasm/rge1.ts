@@ -1,3 +1,3 @@
 #!/usr/bin/env deno run
-import { many } from "./rge1.wasm";
-console.log(many());
+import { rge1 } from "./rge1.wasm";
+console.log(rge1());
