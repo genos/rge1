@@ -67,26 +67,22 @@
 
   ;; rge1
 
-  (func $single (result f64)
-    (local $i f64)
-    (local $t f64)
-    (loop $loop
-      (block $break
-        (br_if $break
-          (f64.ge (local.get $t) (f64.const 1.0)))
-        (local.set $i (f64.add (local.get $i) (f64.const 1.0)))
-        (local.set $t (f64.add (local.get $t) (call $random)))
-        (br $loop)))
-    (local.get $i))
-
   (func $rge1 (export "rge1") (result f64)
     (local $i f64)
     (local $x f64)
-    (loop $loop
-      (block $break
-        (br_if $break
+    (local $t f64)
+    (loop $loop-outer
+      (block $break-outer
+        (br_if $break-outer
           (f64.ge (local.get $i) (f64.const 1e6)))
         (local.set $i (f64.add (local.get $i) (f64.const 1.0)))
-        (local.set $x (f64.add (local.get $x) (call $single)))
-        (br $loop)))
+        (local.set $t (f64.const 0.0))
+        (loop $loop-inner
+          (block $break-inner
+            (br_if $break-inner
+              (f64.ge (local.get $t) (f64.const 1.0)))
+            (local.set $t (f64.add (local.get $t) (call $random)))
+            (local.set $x (f64.add (local.get $x) (f64.const 1.0)))
+            (br $loop-inner)))
+        (br $loop-outer)))
     (f64.div (local.get $x) (f64.const 1e6))))

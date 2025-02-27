@@ -18,7 +18,7 @@
         name = "rge1";
         src = ./.;
         buildInputs = [pkgs.binaryen pkgs.deno];
-        buildPhase = "wasm-as -all -cw ${name}.wat && wasm-opt -O4 ${name}.wasm -o ${name}.wasm";
+        buildPhase = "wasm-as ${name}.wat && wasm-opt -O4 ${name}.wasm -o ${name}.wasm";
         installPhase = "mkdir -p $out/bin && cp ${name}.ts $out/bin/${name} && cp ${name}.wasm $out/bin";
       };
     });
