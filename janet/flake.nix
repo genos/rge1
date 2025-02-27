@@ -17,7 +17,7 @@
       packages.default = pkgs.stdenv.mkDerivation rec {
         name = "rge1";
         src = ./.;
-        buildInputs = [ pkgs.janet pkgs.jpm ];
+        buildInputs = [pkgs.janet pkgs.jpm];
         buildPhase = ''
           export JANET_PATH="$PWD/.jpm"
           export JANET_LIBPATH="${pkgs.janet}/lib"
