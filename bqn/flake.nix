@@ -12,7 +12,7 @@
     nixpkgs,
   }:
     flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs {inherit system;};
+      pkgs = nixpkgs.legacyPackages.${system};
     in {
       packages.default = pkgs.writeShellApplication rec {
         name = "rge1";
