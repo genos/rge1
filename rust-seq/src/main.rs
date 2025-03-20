@@ -13,6 +13,7 @@ struct Args {
     seed: u64,
 }
 
+#[allow(clippy::cast_precision_loss)]
 fn main() {
     let args = Args::parse();
     let mut rng = SmallRng::seed_from_u64(args.seed);
@@ -24,5 +25,6 @@ fn main() {
             t += rng.random::<f64>();
         }
     }
+    x /= args.num_runs as f64;
     println!("{x}");
 }
