@@ -17,8 +17,8 @@
       packages.default = pkgs.stdenv.mkDerivation rec {
         name = "rge1";
         src = ./.;
-        buildInputs = [pkgs.clang_19];
-        buildPhase = "clang -Wall -Wextra -O3 -ffast-math -std=c2x ${name}.c -o ${name}";
+        buildInputs = [pkgs.clang_19 pkgs.pcg_c];
+        buildPhase = "clang -Wall -Wextra -O3 -march=native -ffast-math -std=c2x -lpcg_random ${name}.c -o ${name}";
         installPhase = "mkdir -p $out/bin; cp ${name} $out/bin";
       };
     });
