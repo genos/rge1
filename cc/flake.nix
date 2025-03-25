@@ -18,7 +18,7 @@
         name = "rge1";
         src = ./.;
         buildInputs = [pkgs.clang_19 pkgs.pcg_c];
-        buildPhase = "clang++ -Wall -Wextra -O3 -ffast-math -std=c++2b -lpcg_random ${name}.cc -o ${name}";
+        buildPhase = "clang++ -Wall -Wextra -Ofast -march=native -std=c++2b -lpcg_random ${name}.cc -o ${name}";
         installPhase = "mkdir -p $out/bin; cp ${name} $out/bin";
       };
     });
