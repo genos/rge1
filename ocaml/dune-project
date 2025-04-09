@@ -1,4 +1,4 @@
-(lang dune 3.17)
+(lang dune 3.18)
 
 (name rge1)
 
@@ -6,5 +6,5 @@
  (name rge1)
  (synopsis "Random ≥ 1, in OCaml")
  (depends
-   (ocaml (and (>= 5.2.0) (< 6)))
+   (ocaml (and (>= 5.3.0) (< 6)))
    (domainslib (>= 0.5.1))))
