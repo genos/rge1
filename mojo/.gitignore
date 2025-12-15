@@ -1,7 +1,3 @@
-rge1
-
 # pixi environments
-.pixi
-*.egg-info
-# magic environments
-.magic
+.pixi/*
+!.pixi/config.toml

@@ -1,12 +1,10 @@
 from algorithm import mean, parallelize
-from buffer import Buffer
-from memory import UnsafePointer
 from random import random_float64
 
 
 def main():
-    var ptr = UnsafePointer[Scalar[DType.float64]].alloc(1_000_000)
-    var x = Buffer[DType.float64, 1_000_000](ptr)
+    var ptr = alloc[Float64](1_000_000)
+    var x = Span(ptr=ptr, length=1_000_000)
 
     @parameter
     fn f(i: Int) capturing -> None:

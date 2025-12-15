@@ -11,5 +11,5 @@ pub fn main() !void {
         }
     }
     x /= 1e6;
-    try std.io.getStdOut().writer().print("{d}\n", .{x});
+    std.debug.print("{d}\n", .{x});
 }
