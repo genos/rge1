@@ -2,7 +2,7 @@
     .name = .rge1,
     .version = "0.0.0",
     .fingerprint = 0xe4bef57620234980,
-    .minimum_zig_version = "0.14.0",
+    .minimum_zig_version = "0.16.0",
     .paths = .{
         "build.zig",
         "build.zig.zon",
