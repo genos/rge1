@@ -4,9 +4,9 @@ import "core:fmt"
 import "core:math/rand"
 
 main :: proc() {
-	n: u32 = 1e6
+	n: u32 : 1e6
 	rand.reset_u64(1729)
-	x := 0.0
+	x: f64 = 0.0
 	total: f64
 	for _ in 0 ..< n {
 		total = 0.0

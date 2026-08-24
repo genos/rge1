@@ -1,5 +1,5 @@
+use alea::Rng;
 use argh::FromArgs;
-use fastrand::Rng;
 
 /// Random ≥ 1 in Rust.
 #[derive(FromArgs)]
@@ -15,7 +15,7 @@ struct Args {
 #[allow(clippy::cast_precision_loss)]
 fn main() {
     let args: Args = argh::from_env();
-    let mut rng = Rng::with_seed(args.seed);
+    let rng = Rng::with_seed(args.seed);
     let mut x = 0.0;
     for _ in 0..args.num_runs {
         let mut t = 0.0;

@@ -1,5 +1,5 @@
+use alea::Rng;
 use argh::FromArgs;
-use fastrand::Rng;
 use rayon::prelude::*;
 
 /// Random ≥ 1 in Rust.
@@ -24,9 +24,9 @@ fn merge((n_a, mu_a): (f64, f64), (n_b, mu_b): (f64, f64)) -> (f64, f64) {
 fn main() {
     let args: Args = argh::from_env();
     let mut seeds = vec![0u64; args.num_runs];
-    let mut rng = Rng::with_seed(args.seed);
+    let rng = Rng::with_seed(args.seed);
     for s in &mut seeds {
-        *s = rng.u64(..);
+        *s = rng.u64();
     }
     let x = seeds
         .into_par_iter()
@@ -34,7 +34,7 @@ fn main() {
             args.chunk_size,
             || (0.0, 0.0),
             |acc, seed| {
-                let mut rng = Rng::with_seed(seed);
+                let rng = Rng::with_seed(seed);
                 let (mut x, mut t) = (0.0, 0.0);
                 while t < 1.0 {
                     x += 1.0;
