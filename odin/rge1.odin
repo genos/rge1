@@ -4,17 +4,16 @@ import "core:fmt"
 import "core:math/rand"
 
 main :: proc() {
-	n: u32 : 1e6
-	rand.reset_u64(1729)
-	x: f64 = 0.0
-	total: f64
+	rand.reset(1729)
+	n :: 1e6
+	x, total := 0.0, 0.0
 	for _ in 0 ..< n {
 		total = 0.0
-		for total < 1 {
-			x += 1
+		for total < 1.0 {
+			x += 1.0
 			total += rand.float64()
 		}
 	}
-	x /= f64(n)
+	x /= n
 	fmt.println(x)
 }
