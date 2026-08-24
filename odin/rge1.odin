@@ -1,4 +1,4 @@
-package main
+package rge1
 
 import "core:fmt"
 import "core:math/rand"
