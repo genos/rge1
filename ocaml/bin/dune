@@ -1,4 +1,4 @@
 (executable
+ (name main)
  (public_name rge1)
- (libraries domainslib)
- (name main))
+ (libraries domainslib))

@@ -1,19 +1,16 @@
 module T = Domainslib.Task
 
-let go _ =
-  let t, i = (ref 0.0, ref 0) in
+let body s =
+  let r, t, i = (Random.State.make [| s |], ref 0.0, ref 0) in
   while !t < 1.0 do
     incr i;
-    t := !t +. Random.float 1.0
+    t := !t +. Random.State.float r 1.0
   done;
-  !i
+  float_of_int !i
 
 let () =
-  let n = 1_000_000 in
-  let pool = T.setup_pool ~num_domains:15 () in
+  let p, start, finish = (T.setup_pool ~num_domains:17 (), 1, 1_000_000) in
   let x =
-    T.run pool (fun _ ->
-        T.parallel_for_reduce ~start:1 ~finish:n ~body:(Fun.const go ()) pool
-          ( + ) 0)
+    T.run p (fun _ -> T.parallel_for_reduce ~start ~finish ~body p ( +. ) 0.0)
   in
-  Printf.printf "%f\n" (float_of_int x /. float_of_int n)
+  Printf.printf "%f\n" (x /. float_of_int finish)

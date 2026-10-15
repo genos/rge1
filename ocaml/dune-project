@@ -6,5 +6,5 @@
  (name rge1)
  (synopsis "Random ≥ 1, in OCaml")
  (depends
-   (ocaml (and (>= 5.3.0) (< 6)))
-   (domainslib (>= 0.5.1))))
+   (ocaml (and (>= 5.5.0) (< 6)))
+   (domainslib (>= 0.5.2))))
